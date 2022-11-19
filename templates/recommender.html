@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crop booster - Try</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="./public/css/index.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+    <script src=
+"https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.5.2/dist/tf.min.js">
+    </script>
+    <link rel="icon" type="image/x-icon" href="./public/assets/GSFS LOGO.png">
+</head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark px-4 sticky-top">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+              Crop Booster
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="recommender.html">Try Free</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="jumbotron1 container-fluid py-4 px-4">
+        <h1 class="display-4 text-center">Try Our Solution</h1>
+        <p class="lead text-center">Test out our solution by typing in your input parameters!</p>
+      </div>
+
+      <div class="container py-4 px-4 sec1">
+          <div class="row">
+            <div class="col-md-6 py-2 px-4">
+                <form method="POST">
+                    <div class="fw-bold fs-1">Features Input</div><br/>
+                    <div class="row g-3">
+                        <div class="col mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">pH</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="pH">
+                        </div>
+                        <div class="col mb-3">
+                            <label for="exampleFormControlInput2" class="form-label">OC</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput2" placeholder="OC">
+                        </div>
+                        <div class="col mb-3">
+                            <label for="exampleFormControlInput3" class="form-label">EC</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput3" placeholder="EC">
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col mb-3">
+                            <label for="exampleFormControlInput4" class="form-label">N</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput4" placeholder="N">
+                        </div>
+                        <div class="col mb-3">
+                            <label for="exampleFormControlInput5" class="form-label">P</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput5" placeholder="P">
+                        </div>
+                        <div class="col mb-3">
+                            <label for="exampleFormControlInput6" class="form-label">K</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput6" placeholder="K">
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col mb-3">
+                            <label for="exampleFormControlInput7" class="form-label">S</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput7" placeholder="S">
+                        </div>
+                        <div class="col mb-3">
+                            <label for="exampleFormControlInput8" class="form-label">Ca</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput8" placeholder="Ca">
+                        </div>
+                        <div class="col mb-3">
+                            <label for="exampleFormControlInput9" class="form-label">Mg</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput9" placeholder="Mg">
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col mb-3">
+                            <label for="exampleFormControlInput10" class="form-label">Zn</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput10" placeholder="Zn">
+                        </div>
+                        <div class="col mb-3">
+                            <label for="exampleFormControlInput11" class="form-label">Cu</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput11" placeholder="Cu">
+                        </div>
+                        <div class="col mb-3">
+                            <label for="exampleFormControlInput12" class="form-label">Fe</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput12" placeholder="Fe">
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col mb-3">
+                            <label for="exampleFormControlInput13" class="form-label">Mn</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput13" placeholder="Mn">
+                        </div>
+                        <div class="col mb-3">
+                            <label for="exampleFormControlInput14" class="form-label">Texture</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput14" placeholder="Texture">
+                        </div>
+                    </div>
+                    <button type="button" class="my-1 mx-1 btn btn-primary calculate">Calculate</button>
+                    <button type="button" class="my-1 mx-1 btn btn-warning generatetest">Generate Test Data</button>
+                    <!-- <button type="button" class="my-1 mx-1 btn btn-danger generate">Generate Random Data</button> -->
+                </form>
+            </div>
+            <div class="col-md-6 text-center py-2 px-4 bg-primary">
+                <div class="fw-bold fs-1 text-light">Output</div><br/>
+                <div class="outputbox">
+                    <div class="outputboxlabel">
+                       <div class="fs-4">Best Crops for your land : </div> <br/>
+                       <div class="fs-5 op" id="op"></div>
+                    </div>
+
+                    <div class="outputboxlabel">
+                      <div class="fs-4">Soil Fertility : </div> <br/>
+                      <div class="fs-5 op2" id="op2"></div>
+                      <div class="fs-6 op3" id="op3"></div>
+                   </div>
+
+                   <div class="outputboxlabel">
+                    <div class="fs-4">District : </div> <br/>
+                    <div class="fs-5 op4" id="op4"></div>
+                 </div>
+                </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="container-fluid py-3 px-4 footer bg-primary text-light text-center">
+        All copyrights reserved Project Crop Booster 2022
+      </div>
+    <script src="./public/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
