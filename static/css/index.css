@@ -1,0 +1,56 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Arvo', serif;
+}
+.jumbotron{
+    background-image:url('../assets/savesoilbanner.png');
+    color:white;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.jumbotron1{
+    background-image:url('../assets/savesoilbanner.png');
+    color:white;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sec1{
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.fullwidthimg{
+    width:100%;
+}
+.iframe{
+    width:100%;
+    aspect-ratio:16/9;
+}
+.outputbox{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+    background-color: white;
+}
+.outputboxlabel{
+    width:fit-content;
+    height: fit-content;
+    font-weight: bold;
+    font-size: 18px;
+    padding:20px;
+    margin: 10px;
+    color:black;
+    word-wrap: wrap;
+    align-self: center;
+}
