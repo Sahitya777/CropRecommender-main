@@ -1,6 +1,6 @@
 Instructions for using the Crop booster Model.
 
-Download the GAIP_Final_Project_Group3.ipynb file and the dataset(final_data.csv) file.
+Download the Final_Project.ipynb file and the dataset(final_data.csv) file.
 
 For Jupyter notebook
 1. Make a folder including both files.
